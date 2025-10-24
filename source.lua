@@ -2476,6 +2476,9 @@ function Library.new(config)
 	end)
 
 	function WindowTable:Destroy()
+		if WindowTable.ElBlurUI then
+			WindowTable.ElBlurUI:Destroy()
+		end
 		ScreenGui:Destroy()
 		RunService:UnbindFromRenderStep('__LIBRARY__')
 	end

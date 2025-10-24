@@ -420,8 +420,8 @@ function Library.new(config)
 		Update()
 	end)
 
-	Input.InputBegan:Connect(function(io)
-		if io.KeyCode == WindowTable.Keybind then
+	Input.InputBegan:Connect(function(io, processed)
+		if io.KeyCode == WindowTable.Keybind and not processed then
 			WindowTable.WindowToggle = not WindowTable.WindowToggle
 			Update()
 		end

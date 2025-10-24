@@ -2475,6 +2475,11 @@ function Library.new(config)
 		end;
 	end)
 
+	function WindowTable:Destroy()
+		ScreenGui:Destroy()
+		RunService:UnbindFromRenderStep('__LIBRARY__')
+	end
+
 	return WindowTable;
 end;
 

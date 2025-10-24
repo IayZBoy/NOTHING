@@ -1636,14 +1636,17 @@ function Library.new(config)
 				UICorner.CornerRadius = UDim.new(0, 2)
 				UICorner.Parent = FunctionTitle
 
-				return {
-					Visible = function(newindx)
-						FunctionTitle.Visible = newindx
-					end,
-					Set = function(a)
-						TextInt.Text = a
-					end,
-				};
+                local TitleTable = {}
+
+                TitleTable.Visible = function(newindex)
+                    FunctionTitle.Visible = newindex
+                end
+
+                function TitleTable:Set(txt)
+                    TextInt.Text = txt
+                end
+
+                return TitleTable
 			end;
 
 			function SectionTable:NewButton(cfg)
@@ -2480,7 +2483,6 @@ function Library.new(config)
 			WindowTable.ElBlurUI:Destroy()
 		end
 		ScreenGui:Destroy()
-		RunService:UnbindFromRenderStep('__LIBRARY__')
 	end
 
 	return WindowTable;

@@ -2557,11 +2557,9 @@ Library.NewAuth = function(conf)
 	Auth.BorderSizePixel = 0
 	Auth.ClipsDescendants = true
 	Auth.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Auth.Size = UDim2.new(0.100000001, 245, 0.100000001, 115)
+	Auth.Size = UDim2.new(0.100000001, 245, 0.100000001, 40)
 
 	local BlueEffect = ElBlurSource.new(MainFrame,true);
-	local cose = {Library.GradientImage(MainFrame),
-		Library.GradientImage(MainFrame,Color3.fromRGB(255, 0, 4))}
 
 	MainFrame.Name = "MainFrame"
 	MainFrame.Parent = Auth
@@ -2605,8 +2603,8 @@ Library.NewAuth = function(conf)
 	Button2.BackgroundTransparency = 0.500
 	Button2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Button2.BorderSizePixel = 0
-	Button2.Position = UDim2.new(0.75, 0, 0.649999976, 0)
-	Button2.Size = UDim2.new(0.447547048, 0, 0.155089319, 0)
+	Button2.Position = UDim2.new(0.75, 0, 0.82, 0)
+	Button2.Size = UDim2.new(0.447547048, 0, 0.2, 0)
 	Button2.ZIndex = 3
 	Button2.Font = Enum.Font.GothamBold
 	Button2.Text = "ACTIVATE"
@@ -2643,8 +2641,8 @@ Library.NewAuth = function(conf)
 	TextBox.BackgroundTransparency = 0.500
 	TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	TextBox.BorderSizePixel = 0
-	TextBox.Position = UDim2.new(0.5, 0, 0.300000012, 0)
-	TextBox.Size = UDim2.new(0.800000012, 0, 0.115000002, 0)
+	TextBox.Position = UDim2.new(0.5, 0, 0.44, 0)
+	TextBox.Size = UDim2.new(0.945, 0, 0.41, 0)
 	TextBox.ZIndex = 2
 	TextBox.ClearTextOnFocus = false
 	TextBox.Font = Enum.Font.Unknown
@@ -2685,8 +2683,8 @@ Library.NewAuth = function(conf)
 	Button1.BackgroundTransparency = 0.500
 	Button1.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Button1.BorderSizePixel = 0
-	Button1.Position = UDim2.new(0.25, 0, 0.649999976, 0)
-	Button1.Size = UDim2.new(0.447547048, 0, 0.155089319, 0)
+	Button1.Position = UDim2.new(0.25, 0, 0.82, 0)
+	Button1.Size = UDim2.new(0.447547048, 0, 0.2, 0)
 	Button1.ZIndex = 3
 	Button1.Font = Enum.Font.GothamBold
 	Button1.Text = "GET KEY"
@@ -2739,8 +2737,8 @@ Library.NewAuth = function(conf)
 	Title.BackgroundTransparency = 1.000
 	Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Title.BorderSizePixel = 0
-	Title.Position = UDim2.new(0.0250000004, 0, 0.0350000001, 0)
-	Title.Size = UDim2.new(0.899999976, 0, 0.075000003, 0)
+	Title.Position = UDim2.new(0.025, 0, 0.035, 0)
+	Title.Size = UDim2.new(0.9, 0, 0.075, 0)
 	Title.Font = Enum.Font.GothamBold
 	Title.Text = conf.Title;
 	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -2801,11 +2799,6 @@ Library.NewAuth = function(conf)
 
 			BlueEffect.Destroy();
 
-
-			for i,v in ipairs(cose) do
-				game:GetService('RunService'):UnbindFromRenderStep(v);
-			end;
-
 			Twen:Create(MainFrame,TweenInfo.new(1,Enum.EasingStyle.Quint,Enum.EasingDirection.InOut),{
 				Size = UDim2.new(0.8,0,0.8,0)
 			}):Play();
@@ -2857,7 +2850,7 @@ Library.Notification = function()
 		new = function(ctfx)
 			ctfx = Config(ctfx,{
 				Title = "Notification",
-				Description = "Description",,
+				Description = "Description",
 				TitleFontSize = 14,
 				DescriptionFontSize = 9,
 				Duration = 5,
